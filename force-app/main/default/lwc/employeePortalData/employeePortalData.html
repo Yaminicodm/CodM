@@ -1,0 +1,17 @@
+<template>
+	<template if:true={isSingle}>
+		<lightning-card title="Employee Details">
+			<div class="slds-m-left_x-large">
+				<lightning-record-view-form object-api-name="Employee__c" record-id={recordId}>
+					<div class="displayFormat">
+						<template for:each={columns} for:item="col">
+							<h1 key={col}>
+								<lightning-output-field field-name={col}></lightning-output-field>
+							</h1>
+						</template>
+					</div>
+				</lightning-record-view-form>
+			</div>
+		</lightning-card>
+	</template>
+</template>
