@@ -6,8 +6,6 @@ public with sharing class EmployeePortalDataController {
         if (dataType == 'Employee') {
             returnValue.columns = getFieldsByFieldSet('Employee__c', 'Employee_Portal_FieldSet');
             returnValue.records = getEmployeeData(returnValue.columns);
-            //returnValue.columns = epMtd.Columns__c.split(',');
-            
             returnValue.isSingle = isSingle;
             returnValue.recordId = (String) returnValue.records[0].get('Id');
             returnValue.tableColumns = null;
